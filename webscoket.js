@@ -1,4 +1,4 @@
-const url = 'http://localhost:8090';
+const url = 'https://websocket-chatapp-testing.herokuapp.com';
 let stompClient;
 let selectedUserOrGrup="10000000000000000";
 let newMessages = new Map();
