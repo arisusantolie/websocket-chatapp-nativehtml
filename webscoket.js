@@ -81,8 +81,13 @@ function connectToChat(userName) {
 
 
 window.onload = function() {
-    fetchAll();
 
+    if (localStorage.getItem("userId") === null) {
+        window.location.href = "index.html";
+        return false;
+    }
+
+    fetchAll();
     connectToChat(localStorage.getItem("userId"));
 
   };
@@ -300,4 +305,11 @@ function scrollToBottom() {
     
     // $('#formMessageBody').scrollTop($('#formMessageBody')[0].scrollHeight);
     // $('#formMessageBody').scrollTop($('#formMessageBody')[0].scrollHeight - $('#formMessageBody')[0].clientHeight);
+}
+
+function logout(){
+    localStorage.removeItem("userId");
+    window.location.href = "index.html";
+
+    return false;
 }
